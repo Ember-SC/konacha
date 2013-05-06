@@ -1,7 +1,8 @@
 <!doctype html>
 <html data-path="<%= @spec.path %>">
   <head>
-    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Konacha Tests</title>
 
     <% @stylesheets.each do |file| %>
@@ -9,6 +10,7 @@
       <%= stylesheet_link_tag file, :debug => false %>
     <% end %>
 
+	<%= javascript_include_tag "konacha/iframe", :debug => false %>
     <%= javascript_include_tag @spec.asset_name %>
   </head>
   <body>

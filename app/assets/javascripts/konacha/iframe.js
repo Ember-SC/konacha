@@ -5,8 +5,8 @@ window.Konacha = {
   }
 };
 
-window.QUnit = Object.create(parent.QUnit);
-window.pavlov = Object.create(parent.pavlov);
+window.QUnit = top.QUnit;
+window.pavlov = top.pavlov;
 
 // In order to isolate top-level before hooks,
 // the specs in each iframe are wrapped in an anonymous suite.
