@@ -3,9 +3,9 @@
 Gem::Specification.new do |gem|
   gem.authors       = ["John Firebaugh"]
   gem.email         = ["john.firebaugh@gmail.com"]
-  gem.summary       = %q{Unit-test your Rails JavaScript with the mocha test framework and chai assertion library}
+  gem.summary       = %q{Unit-test your Rails JavaScript with the QUnit test framework using BDD suites/specs with pavlov}
   gem.description   = %q{Konacha is a Rails engine that allows you to test your JavaScript with the
-mocha test framework and chai assertion library.
+Qunit test framework using BDD suites/specs with pavlov.
 
 It is similar to Jasmine and Evergreen, but does not attempt to be framework
 agnostic. By sticking with Rails, Konacha can take full advantage of features such as

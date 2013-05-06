@@ -46,29 +46,29 @@ describe Konacha::Reporter do
     end
   end
 
-  describe "#process_mocha_event" do
+  describe "#process_qunit_event" do
     before { subject.stub(:process_event) }
 
     it "calls #start if passed the start event" do
       subject.should_receive(:start).with(4)
-      subject.process_mocha_event({'event' => 'start', 'testCount' => 4})
+      subject.process_qunit_event({'event' => 'start', 'testCount' => 4})
     end
 
     it "calls #finish if passed the end event" do
       subject.should_receive(:finish)
-      subject.process_mocha_event({'event' => 'end'})
+      subject.process_qunit_event({'event' => 'end'})
     end
 
     it "creates the object" do
       subject.should_receive(:update_or_create_object).with('data', 'type')
-      subject.process_mocha_event({'data' => 'data', 'type' => 'type'})
+      subject.process_qunit_event({'data' => 'data', 'type' => 'type'})
     end
 
     it "calls #process_event with the converted event name" do
       object = double('test')
       subject.stub(:update_or_create_object) { object }
       subject.should_receive(:process_event).with(:example_started, object)
-      subject.process_mocha_event({'event' => 'test', 'type' => 'test'})
+      subject.process_qunit_event({'event' => 'test', 'type' => 'test'})
     end
   end
 

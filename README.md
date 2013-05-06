@@ -4,8 +4,9 @@
 [![Dependency Status](https://gemnasium.com/jfirebaugh/konacha.png)](https://gemnasium.com/jfirebaugh/konacha)
 
 Konacha ([koh-NAH-cha], a type of green tea) is a Rails engine that allows you to test your JavaScript with the
-[Mocha](http://visionmedia.github.com/mocha/) test framework and [chai](http://chaijs.com/)
-assertion library.
+[QUnit](https://github.com/jquery/qunit) test framework using 
+[pavlov](https://github.com/pixelhandler/pavlov) for authoring your
+tests with BDD suites/specs
 
 [![Konacha in action][2]][1]
 
@@ -142,25 +143,7 @@ describe("Array#sum", function() {
 });
 ```
 
-The `spec_helper` is a good place to set Mocha and Chai options as well, for instance:
-
-```javascript
-// set the Mocha test interface
-// see http://visionmedia.github.com/mocha/#interfaces
-mocha.ui('bdd');
-
-// ignore the following globals during leak detection
-mocha.globals(['YUI']);
-
-// or, ignore all leaks
-mocha.ignoreLeaks();
-
-// set slow test timeout in ms
-mocha.timeout(5);
-
-// Show stack trace on failing assertion.
-chai.Assertion.includeStack = true;
-```
+The `spec_helper` is a good place to set testing/application options
 
 ## Directives and Asset Bundling
 
@@ -202,20 +185,7 @@ The values above are the defaults.
 
 ## Test Interface and Assertions
 
-Konacha includes a vendored copy of mocha.js and the [chai](http://chaijs.com/)
-assertion libraries. By default, it configures Mocha to use the "BDD" test
-interface, which provides `describe()`, `it()`, `before()`, `after()`,
-`beforeEach()`, and `afterEach()`.
-
-Konacha will make all three of chai's assertion styles available to you: `expect`,
-`should`, and `assert`. See the chai documentation for the details.
-
-If you use jQuery, you may want to check out [chai-jquery](https://github.com/jfirebaugh/chai-jquery)
-for some jQuery-specific assertions. There are a lot of interesting chai
-matchers out there, see [the chai plugins page](http://chaijs.com/plugins)
-
-To make all these available for your konacha environment, see the
-[Konacha-chai-matchers gem](https://github.com/matthijsgroen/konacha-chai-matchers)
+See the Qunit and pavlov projects for documentation on assertions 
 
 ## Templates / Fixtures
 
@@ -303,12 +273,12 @@ Run `bundle exec rake` to run the test suite.
 ### Contributing to Mocha and Chai
 
 The Konacha repository includes the
-[Mocha](https://github.com/visionmedia/mocha) and
-[Chai](https://github.com/chaijs/chai) repositories as submodules, so
+[Qunit](https://github.com/jquery/qunit) and
+[pavlov](https://github.com/pixelhandler/pavlov) repositories as submodules, so
 you can hack on them directly:
 
 ```bash
-cd mocha # or: cd chai
+cd qunit # or: cd pavlov
 git checkout master
 ... hack-hack-hack ...
 bundle exec rake assets # make and cp assets based on your changes

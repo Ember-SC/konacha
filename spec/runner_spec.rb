@@ -128,16 +128,16 @@ describe Konacha::Runner do
       let(:end_event) { {'event' => 'end', 'data' => {} } }
 
       it "passes along the right events" do
-        subject.reporter.should_receive(:process_mocha_event).with(start)
-        subject.reporter.should_receive(:process_mocha_event).with(suite)
-        subject.reporter.should_receive(:process_mocha_event).with(suite_end)
-        subject.reporter.should_receive(:process_mocha_event).with(test)
-        subject.reporter.should_receive(:process_mocha_event).with(failure)
-        subject.reporter.should_receive(:process_mocha_event).with(error)
-        subject.reporter.should_receive(:process_mocha_event).with(pass)
-        subject.reporter.should_receive(:process_mocha_event).with(pending)
-        subject.reporter.should_receive(:process_mocha_event).with(end_event)
-        subject.reporter.should_receive(:process_mocha_event).any_number_of_times
+        subject.reporter.should_receive(:process_qunit_event).with(start)
+        subject.reporter.should_receive(:process_qunit_event).with(suite)
+        subject.reporter.should_receive(:process_qunit_event).with(suite_end)
+        subject.reporter.should_receive(:process_qunit_event).with(test)
+        subject.reporter.should_receive(:process_qunit_event).with(failure)
+        subject.reporter.should_receive(:process_qunit_event).with(error)
+        subject.reporter.should_receive(:process_qunit_event).with(pass)
+        subject.reporter.should_receive(:process_qunit_event).with(pending)
+        subject.reporter.should_receive(:process_qunit_event).with(end_event)
+        subject.reporter.should_receive(:process_qunit_event).any_number_of_times
         subject.run
       end
 

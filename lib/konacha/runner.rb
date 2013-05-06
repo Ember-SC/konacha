@@ -25,7 +25,7 @@ module Konacha
         if events.present?
           events[events_consumed..-1].each do |event|
             done = true if event['event'] == 'end'
-            reporter.process_mocha_event(event)
+            reporter.process_qunit_event(event)
           end
 
           events_consumed = events.length

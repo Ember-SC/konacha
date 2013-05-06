@@ -1,6 +1,7 @@
 bin
 *.gem
 *.rbc
+.DS_Store
 .bundle
 .config
 .yardoc

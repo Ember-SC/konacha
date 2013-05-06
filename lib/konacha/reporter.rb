@@ -51,7 +51,7 @@ module Konacha
       failure_count == 0
     end
 
-    def process_mocha_event(event)
+    def process_qunit_event(event)
       if event['event'] == 'start'
         start(event['testCount'])
       elsif event['event'] == 'end'

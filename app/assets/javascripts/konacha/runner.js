@@ -3,7 +3,7 @@ Konacha = {
     return JSON.stringify(Konacha.events || []);
   }
 };
-
+/*
 mocha.reporter(function(runner) {
   var createTestObject = function(test, status) {
     var obj = {
@@ -85,3 +85,4 @@ mocha.reporter(function(runner) {
     Konacha.events.push({event:'end', data:{}});
   });
 });
+*/

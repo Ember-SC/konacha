@@ -1,16 +1,22 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Konacha Tests</title>
     <%= stylesheet_link_tag "konacha", :debug => false %>
-    <%= javascript_include_tag "mocha", "konacha/parent", :debug => false %>
+    <%= javascript_include_tag "qunit", "konacha/parent", :debug => false %>
+    <%= javascript_include_tag "pavlov", "konacha/parent", :debug => false %>
     <%= javascript_include_tag("konacha/runner", :debug => false) if @run_mode.runner? %>
   </head>
   <body>
     <% @specs.each do |spec| %>
       <%= content_tag :iframe, "", :src => iframe_path(spec.asset_name), :class => "test-context", "data-path" => spec.path %>
     <% end %>
-    <div id="mocha"></div>
+    <h1 id="qunit-header"></h1>
+    <h2 id="qunit-banner"></h2>
+    <div id="qunit-testrunner-toolbar"></div>
+    <h2 id="qunit-userAgent"></h2>
+    <ol id="qunit-tests"></ol>
   </body>
 </html>

@@ -4,3 +4,9 @@
 [submodule "mocha"]
 	path = mocha
 	url = git://github.com/visionmedia/mocha.git
+[submodule "qunit"]
+	path = qunit
+	url = git://github.com/jquery/qunit.git
+[submodule "pavlov"]
+	path = pavlov
+	url = git@github.com:pixelhandler/pavlov.git
