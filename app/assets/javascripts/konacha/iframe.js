@@ -5,8 +5,31 @@ window.Konacha = {
   }
 };
 
-window.QUnit = top.QUnit;
-window.pavlov = top.pavlov;
+(function(){
+
+  var QUnitAPI = [
+    'QUnit',
+    'module',
+    'test',
+    'asyncTest',
+    'start',
+    'stop',
+    'expect',
+    'deepEqual',
+    'notDeepEqual',
+    'equal',
+    'notEqual',
+    'strictEqual',
+    'notStrictEqual',
+    'ok',
+    'throws'
+  ];
+
+  for (var i = 0; i < QUnitAPI.length; i++) {
+    window[QUnitAPI[i]] = top[QUnitAPI[i]];
+  }
+
+}());
 
 // In order to isolate top-level before hooks,
 // the specs in each iframe are wrapped in an anonymous suite.
