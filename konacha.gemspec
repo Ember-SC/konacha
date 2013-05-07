@@ -24,6 +24,7 @@ the asset pipeline and engines.}
   gem.add_dependency "actionpack", ">= 3.1", "< 5"
   gem.add_dependency "sprockets"
   gem.add_dependency "capybara"
+  gem.add_dependency "selenium-webdriver"
   gem.add_dependency "colorize"
 
   gem.add_development_dependency "jquery-rails"

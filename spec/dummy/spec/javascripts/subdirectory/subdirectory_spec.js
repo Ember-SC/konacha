@@ -1,5 +1,5 @@
 describe("spec in subdirectory", function(){
   it("passes", function(){
-    (2 + 2).should.equal(4);
+    assert(2 + 2).equals(4);
   });
 });
